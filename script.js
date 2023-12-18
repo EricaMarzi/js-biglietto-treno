@@ -20,17 +20,30 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 
 // Domande all'utente
 const mileage = parseInt(prompt("Quanti chilometri vuoi percorrere?" , "23"));
-const age = parseInt(prompt("Quanti anni ha il passeggero?" , "19"));
+const age = parseInt(prompt("Quanti anni ha il passeggero?" , "17"));
 console.log("km", mileage, "età", age);
 
 // Prezzo viaggio
-const fullPrice = mileage * 0.21;
-console.log(fullPrice);
+let price = mileage * 0.21;
+console.log(price);
 
-// Calcolare eventuale sconto
-const sale = fullPrice * 0.2;
-let newPrice = fullPrice - sale;
-console.log("sconto", sale, "prezzo scontato", newPrice );
+// Calcolare eventuale sconto minorenni e over 65
+let sale = ""
+
+if (age <= 17 || age >= 65) {
+    if (age <= 17) {
+        sale = price * 0.2;
+
+    } else{
+        sale = price * 0.4;
+    }
+    } else {
+       let newPrice = price
+    }
+
+// Calcolo nuovo prezzo scontato
+let newPrice = price - sale;
+console.log("sconto", sale, "prezzo scontato", price );
 
 // Impostare massimo due decimale dopo la virgola e Richiamare l'elemento in pagina
 
