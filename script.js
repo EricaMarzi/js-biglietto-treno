@@ -20,21 +20,19 @@ let price = mileage * 0.21;
 console.log(price);
 
 // Calcolare eventuale sconto minorenni e over 65
-let sale = ""
+let sale = "" //posso usa il valore null al posto delle ""
+let newPrice = price
 
-if (age <= 17 || age >= 65) {
-    if (age <= 17) {
-        sale = price * 0.2;
+if (age < 18) {
+    sale = price * 0.2;
 
-    } else{
-        sale = price * 0.4;
-    }
-    } else {
-       let newPrice = price
-    }
+} else if (age >= 65){
+    sale = price * 0.4;
+}
+
 
 // Calcolo nuovo prezzo scontato
-let newPrice = price - sale;
+newPrice = price - sale;
 console.log("sconto", sale, "prezzo scontato", price );
 
 // Impostare massimo due decimale dopo la virgola e Richiamare l'elemento in pagina
